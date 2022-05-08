@@ -33,12 +33,9 @@ public class ColorsActivity extends AppCompatActivity {
         WordAdapter adapter = new WordAdapter(this, colors, R.color.category_colors);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mediaPlayer = MediaPlayer.create(ColorsActivity.this, colors.get(i).getmMediaId());
-                mediaPlayer.start();
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            mediaPlayer = MediaPlayer.create(ColorsActivity.this, colors.get(i).getmMediaId());
+            mediaPlayer.start();
         });
     }
 }

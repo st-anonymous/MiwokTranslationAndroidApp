@@ -41,16 +41,13 @@ public class NumbersActivity extends AppCompatActivity {
         numbers.add(new Word(R.drawable.number_ten, "na’aacha", "Ten", R.raw.number_ten));
 
 
-        ListView listView = (ListView) findViewById(R.id.listNumber);
+        ListView listView = findViewById(R.id.listNumber);
         WordAdapter adapter = new WordAdapter(this, numbers, R.color.category_numbers);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mediaPlayer = MediaPlayer.create(NumbersActivity.this, numbers.get(i).getmMediaId());
-                mediaPlayer.start();
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            mediaPlayer = MediaPlayer.create(NumbersActivity.this, numbers.get(i).getmMediaId());
+            mediaPlayer.start();
         });
 
     }

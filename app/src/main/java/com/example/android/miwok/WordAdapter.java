@@ -31,7 +31,8 @@ public class WordAdapter extends ArrayAdapter<Word> {
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         if(convertView == null){
-            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent,false);
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
+
         }
         ImageView image = convertView.findViewById(R.id.image);
         if(getItem(position).getImageId() == -1){

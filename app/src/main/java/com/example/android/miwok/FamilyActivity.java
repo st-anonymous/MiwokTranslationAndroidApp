@@ -24,23 +24,20 @@ public class FamilyActivity extends AppCompatActivity {
         familyMembers.add(new Word(R.drawable.family_son,"angsi", "Son", R.raw.family_son));
         familyMembers.add(new Word(R.drawable.family_daughter,"tune", "Daughter", R.raw.family_daughter));
         familyMembers.add(new Word(R.drawable.family_older_brother,"taachi", "Older Brother", R.raw.family_older_brother));
-        familyMembers.add(new Word(R.drawable.family_older_sister,"chalitti", "Older Sister", R.raw.family_older_sister));
-        familyMembers.add(new Word(R.drawable.family_younger_brother,"teṭe", "Younger Brother", R.raw.family_younger_brother));
+        familyMembers.add(new Word(R.drawable.family_older_sister,"teṭe", "Older Sister", R.raw.family_older_sister));
+        familyMembers.add(new Word(R.drawable.family_younger_brother,"chalitti", "Younger Brother", R.raw.family_younger_brother));
         familyMembers.add(new Word(R.drawable.family_younger_sister,"kolliti", "Younger Sister", R.raw.family_younger_sister));
-        familyMembers.add(new Word(R.drawable.family_grandfather,"ama", "Grandfather", R.raw.family_grandfather));
-        familyMembers.add(new Word(R.drawable.family_grandmother,"paapa", "Grandmother", R.raw.family_grandmother));
+        familyMembers.add(new Word(R.drawable.family_grandfather,"paapa", "Grandfather", R.raw.family_grandfather));
+        familyMembers.add(new Word(R.drawable.family_grandmother,"ama", "Grandmother", R.raw.family_grandmother));
 
 
         ListView listView = findViewById(R.id.listFamily);
         WordAdapter adapter = new WordAdapter(this, familyMembers, R.color.category_family);
         listView.setAdapter(adapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                mediaPlayer = MediaPlayer.create(FamilyActivity.this, familyMembers.get(i).getmMediaId());
-                mediaPlayer.start();
-            }
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            mediaPlayer = MediaPlayer.create(FamilyActivity.this, familyMembers.get(i).getmMediaId());
+            mediaPlayer.start();
         });
     }
 }

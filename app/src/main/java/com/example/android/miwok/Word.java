@@ -7,16 +7,17 @@ public class Word {
     private String mMiwokWord;
     private  String mDefaultWord;
 
-    public Word( int imageId, String miwokWord, String defaultWord, int mediaId) {
+    public Word(int imageId, String miwokWord, String defaultWord, int mediaId) {
         mMediaId = mediaId;
         mImageId = imageId;
         mMiwokWord = miwokWord;
         mDefaultWord = defaultWord;
     }
 
-    public Word(String mMiwokWord, String mDefaultWord) {
+    public Word(String mMiwokWord, String mDefaultWord, int mMediaId) {
         this.mMiwokWord = mMiwokWord;
         this.mDefaultWord = mDefaultWord;
+        this.mMediaId = mMediaId;
     }
 
     public String getMiwokWord() {

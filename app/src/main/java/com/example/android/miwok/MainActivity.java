@@ -52,8 +52,8 @@ public class MainActivity extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void openObjectsList(View view) {
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com"));
-        startActivity(i);
-    }
+//    public void openObjectsList(View view) {
+//        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.linkedin.com"));
+//        startActivity(i);
+//    }
 }
